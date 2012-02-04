@@ -6,3 +6,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 set background=dark
+
+
+" enable matchit
+runtime macros/matchit.vim
