@@ -33,3 +33,5 @@ if has("gui_macvim")
   " Available when using experimental renderer in macvim
   " set transparency=15
 end
+
+source ~/.vim/rc/tabularize.vim
