@@ -35,3 +35,4 @@ if has("gui_macvim")
 end
 
 source ~/.vim/rc/tabularize.vim
+source ~/.vim/rc/command-t.vim

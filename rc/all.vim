@@ -8,6 +8,9 @@ syntax on
 filetype plugin indent on
 set background=dark
 
+" Mapleader comma is what the cool kids use
+let mapleader = ","
+
 " Don't redraw during macro execution
 set lazyredraw
 
@@ -55,6 +58,9 @@ set hlsearch
 set scrolloff=4
 
 nnoremap <leader>] :noh<cr>
+
+" Remap return to clear search
+:nnoremap <CR> :nohlsearch<cr>
 
 " enable matchit
 runtime macros/matchit.vim
