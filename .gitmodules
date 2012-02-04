@@ -1,0 +1,3 @@
+[submodule "bundle/ir_black"]
+	path = bundle/ir_black
+	url = https://github.com/wgibbs/vim-irblack.git
