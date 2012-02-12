@@ -1,10 +1,10 @@
-" add to your own .vimrc:
+" add to your own .gvimrc:
 "
-"   source ~/.vim/rc/all.vim
 "   source ~/.vim/rc/gvim.vim
 "
-"
-" My favorite color scheme, only slightly adjusted
+source ~/.vim/rc/all.vim
+source ~/.vim/rc/tabularize.vim
+
 colorscheme ir_black
 
 " Antialias
@@ -33,6 +33,3 @@ if has("gui_macvim")
   " Available when using experimental renderer in macvim
   " set transparency=15
 end
-
-source ~/.vim/rc/tabularize.vim
-source ~/.vim/rc/command-t.vim
