@@ -71,3 +71,4 @@ source ~/.vim/rc/history.vim
 source ~/.vim/rc/statusbar.vim
 source ~/.vim/rc/ruby.vim
 source ~/.vim/rc/clojure.vim
+source ~/.vim/rc/bufexplorer.vim

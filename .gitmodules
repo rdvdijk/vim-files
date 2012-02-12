@@ -43,3 +43,6 @@
 [submodule "bundle/css3"]
 	path = bundle/css3
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
