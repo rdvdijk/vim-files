@@ -15,7 +15,7 @@ set antialias
 set guioptions=Ace
 
 " Get Dejavu Sans mono here: http://dejavu-fonts.org/
-set guifont=Dejavu\ Sans\ Mono:h13
+set guifont=Dejavu\ Sans\ Mono:h14
 
 " Turn off beep
 set vb t_vb=
