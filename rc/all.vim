@@ -22,3 +22,5 @@ source ~/.vim/rc/search.vim
 source ~/.vim/rc/indent.vim
 source ~/.vim/rc/visual.vim
 source ~/.vim/rc/keys.vim
+source ~/.vim/rc/complete.vim
+source ~/.vim/rc/tabularize.vim

@@ -3,7 +3,6 @@
 "   source ~/.vim/rc/gvim.vim
 "
 source ~/.vim/rc/all.vim
-source ~/.vim/rc/tabularize.vim
 
 colorscheme ir_black
 
