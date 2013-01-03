@@ -17,9 +17,7 @@ let ruby_space_errors = 1
 function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
-    :silent !clear
-    :silent exec ":!echo \"\e[0;34m$ rspec -p -b -fd " . substitute(a:filename, getcwd() . "/", "", "") . "\e[0m\""
-    exec ":!time rspec -p -b -fd " . a:filename
+    exec ":!rspec -b -fd " . a:filename
 endfunction
 
 function! SetTestFile()
@@ -51,15 +49,11 @@ endfunction
 
 function! RunCucumberWip()
   :w
-  :silent !clear
-  :silent exec ":!echo \"\e[0;34m$ cucumber --profile wip\e[0m\""
   :!cucumber --profile wip
 endfunction
 
 function! RunCucumber(filename)
   :w
-  :silent !clear
-  :silent exec ":!echo \"\e[0;34m$ cucumber -r features " . substitute(a:filename, getcwd() . "/", "", "") . "\e[0m\""
   exec ":!cucumber -r features " . a:filename
 endfunction
 
