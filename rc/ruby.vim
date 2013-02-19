@@ -17,7 +17,10 @@ let ruby_space_errors = 1
 function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
-    exec ":!rspec -b -fd " . a:filename
+    " make the named pipe if it doesn't exist
+    exec ":silent !if [ ! -p test-commands ]; then mkfifo test-commands; fi"
+    " run the spec by adding the command to the named pipe
+    exec ":silent !echo \"rspec --format documentation --order default --color --tty " . a:filename . "\" > test-commands"
 endfunction
 
 function! SetTestFile()
