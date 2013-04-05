@@ -14,13 +14,18 @@ let ruby_space_errors = 1
 " "ruby_no_tab_space_error" which will ignore trailing whitespace and tabs after
 " spaces respectively.
 
+function! RunPipe(command)
+    " make the named pipe if it doesn't exist
+    " this line gives an error, not sure why...
+    " exec ":silent !if [ \! -p ~/.vim/commands-fifo ]; then mkfifo ~/.vim/commands-fifo; else true; fi"
+    " run the spec by adding the command to the named pipe
+    exec ":silent !echo \"" . a:command . "\" > ~/.vim/commands-fifo"
+endfunction
+
 function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
-    " make the named pipe if it doesn't exist
-    exec ":silent !if [ ! -p test-commands ]; then mkfifo test-commands; fi"
-    " run the spec by adding the command to the named pipe
-    exec ":silent !echo \"rspec --format documentation --order default --color --tty " . a:filename . "\" > test-commands"
+    call RunPipe("rspec --format documentation --order default --color --tty " . a:filename)
 endfunction
 
 function! SetTestFile()
@@ -52,12 +57,12 @@ endfunction
 
 function! RunCucumberWip()
   :w
-  :!cucumber --profile wip
+  call RunPipe("bundle exec cucumber --profile wip")
 endfunction
 
 function! RunCucumber(filename)
   :w
-  exec ":!cucumber -r features " . a:filename
+  call RunPipe("bundle exec cucumber --require features " . a:filename)
 endfunction
 
 map <leader>t :call RunTestFile()<cr>
